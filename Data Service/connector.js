@@ -22,7 +22,24 @@ const listDoctors = async (request, response) => {
     response.json({ info: await pool.query('SELECT * FROM doctors;')})
 }
 
+// Отчеты
+const doctorAppointments = async (request, response) => {
+    response.json({ info: await pool.query('SELECT COUNT(doctor), doctor FROM records GROUP BY doctor;')})
+}
+
+const doctorAppointmentsDay = async (request, response) => {
+    response.json({ info: await pool.query('SELECT COUNT(date_admission), date_admission, doctor FROM records GROUP BY date_admission, doctor ORDER BY doctor, date_admission;')})
+}
+
+const records = async (request, response) => {
+    response.json({ info: await pool.query('SELECT COUNT(date_admission), date_admission FROM records GROUP BY date_admission ORDER BY date_admission;')})
+}
+
 module.exports = {
     getMessage,
-    listDoctors
+    listDoctors,
+
+    doctorAppointments,
+    doctorAppointmentsDay,
+    records,
 }

@@ -14,6 +14,8 @@ CREATE TABLE patients (
 
 CREATE TABLE records (
   id                bigserial,
+  date_admission    DATE NOT NULL DEFAULT CURRENT_DATE,
   cabinet_number    smallint,
+  doctor            varchar (100),
   policy_number     smallint
 );

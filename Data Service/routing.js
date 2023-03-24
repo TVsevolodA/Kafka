@@ -27,4 +27,8 @@ app.get('/doctors', connector.listDoctors)
 // app.get('/patients', connector.select)
 // app.put('/patient/:id', connector.select)
 
+app.get('/doctorAppointments', connector.doctorAppointments)
+app.get('/doctorAppointmentsDay', connector.doctorAppointmentsDay)
+app.get('/records', connector.records)
+
 consumer.run()
