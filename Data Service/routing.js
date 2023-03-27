@@ -21,12 +21,7 @@ app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Data Service API' });
 })
 
-// app.get('/id', connector.test)
 app.get('/doctors', connector.listDoctors)
-// app.put('/doctor/:id', connector.select)
-// app.get('/patients', connector.select)
-// app.put('/patient/:id', connector.select)
-
 app.get('/doctorAppointments', connector.doctorAppointments)
 app.get('/doctorAppointmentsDay', connector.doctorAppointmentsDay)
 app.get('/records', connector.records)

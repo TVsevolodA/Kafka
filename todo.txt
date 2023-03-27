@@ -1,10 +1,2 @@
-TODO: Дописать CRUD запросы в файле queries.js (+ добавить их в index.js)!
-TODO: Дописать CRUD запросы в файле connector.js (+ добавить их в routing.js)!
-TODO: queries.js в методе getListPatients() переписать!
-TODO: Сделать 3 отчета (отдельные роуты):
-        1) Список врачей и количество записей к нему:
-                select count(doctor), doctor from records group by doctor;
-        2) Количество записей к врачу по дням:
-                select count(date_admission), date_admission, doctor from records group by date_admission, doctor order by doctor, date_admission;
-        3) Общее количество записей в поликлинику по дням (количество_записей - день):
-                select count(date_admission), date_admission from records group by date_admission order by date_admission;
+TODO: Дописать CRUD операции.
+TODO: Разделить переменные среды на 2 разных файла (для db + kafka)!

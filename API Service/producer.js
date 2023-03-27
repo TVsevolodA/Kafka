@@ -14,6 +14,5 @@ const producer = kafka.producer({
 async function run(message) {
     await producer.connect()
     await producer.send({topic: topic, messages: [{value: message}] })
-    console.log(`Сообщение ${message} отправлено`);
 }
 module.exports = { run }

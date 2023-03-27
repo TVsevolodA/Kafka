@@ -10,12 +10,8 @@ const pool = new Pool({
 })
 
 const getMessage = async (message) => {
-    // pool.query(message)
     const res = await pool.query(message);
-    console.log(`connector.get_message() результат из бд: ${JSON.stringify(res.rows)}`);
-    // (request, response) => {
-    //     response.status(200).json(JSON.stringify(res.rows))
-    // }
+    console.log(`connector.getMessage(). Запрос ${res} выполнен.`)
 }
 
 const listDoctors = async (request, response) => {
@@ -38,7 +34,6 @@ const records = async (request, response) => {
 module.exports = {
     getMessage,
     listDoctors,
-
     doctorAppointments,
     doctorAppointmentsDay,
     records,

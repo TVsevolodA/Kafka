@@ -20,12 +20,7 @@ app.get('/', (request, response) => {
   })
 
 app.get('/doctora', db.getListDoctors)
-// app.put('/doctor/:id', db.getDoctorInfo)
 app.get('/patients', db.getListPatients)
-// app.put('/patient/:id', db.getPatientInfo)
-// app.post('/tasks', db.getListPatients)
-// app.put('/tasks/:id', db.getPatientInfo)
-// app.delete('/tasks/:id', db.deleteTodo)
 
 // Отчеты:
 app.get('/numberDoctorAppointments', db.doctorAppointments)
