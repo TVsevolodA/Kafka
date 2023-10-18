@@ -1,0 +1,68 @@
+sudo systemctl start postgresql
+
+//===============Docker=====================//
+sudo systemctl start docker - запустить docker
+sudo docker images				- список образов
+sudo docker ps					- список ЗАПУЩЕННЫх контейнеров
+sudo docker ps -a				- список ВСЕХ контейнеров
+sudo docker build . -t <your username>		- собрать свой образ. Предварительно перейти в нужную папку
+sudo docker start(stop) -it MongoTest		- запуск/остановка контейнера в фоне
+sudo docker-compose up				- запустить
+sudo docker-compose down			- остановить
+sudo docker container inspect [id_container]	- узнать ip-адрес контейнера
+sudo docker rmi 18317a11f8b8			- удалить образ
+sudo docker image prune				- удалить все неиспользуемый образы (<none>)
+sudo docker rm b1ba3b6d40c0			- удалить контейнер
+//===============Docker-Compose=============//
+sudo docker-compose up -d			- загрузить образы, создать образ, запустить контейнеры в фоне
+sudo docker-compose up --build -d		- перестроить в фоне
+//===============Docker=====================//
+
+sudo docker-compose rm postgres - удалить старый образ из compose
+sudo docker-compose up --build -d - пересобрать образы
+sudo docker build . -t api_todo	- собрать свой образ
+sudo docker-compose up - запустить
+
+
+node index.js	- запустить проект
+npx kill-port 3000 - убить процессы на порту
+sudo docker exec -it ee1664917e65 psql -U postgres -d db_name
+
+
+#================================================
+sudo docker run -d -p 27017:27017 --name mongodb mongo	- запустить mongo db
+sudo docker start aad3bdb907f0	- запустить контейнер
+sudo docker exec -it mongodb bash	- вход в контейнер с бд
+mongosh	- вызвать командную оболочку mongo
+
+use TaxOffice
+
+
+
+
+#=====================================================================#
+#==============================KAFKA==================================#
+#=====================================================================#
+https://developer.confluent.io/get-started/nodejs/
+https://developer.confluent.io/quickstart/kafka-docker/
+https://kafka.js.org/docs/getting-started
+
+https://github.com/anthonyhastings/kafka-nodejs-example/blob/master/services/consumer/src/consumer.js
+https://github.com/leoantony72/E-commerce-Api/blob/master/src/api-routes/users/stripe.ts
+https://github.com/eranltd/node-js-typescript-kafka/
+https://github.com/chafroudtarek/kafka-and-nodejs-blog
+https://github.com/thiagotigaz/microservices-nestjs-k8
+https://github.com/rmoff/kafka-listeners/blob/master/python/docker-compose.yml
+
+sudo docker-compose up -d - загрузить образы, создать образ, запустить контейнеры в фоне
+sudo docker-compose up --build -d - перестроить
+sudo docker exec -it 63246412a11e psql -U postgres -d polyclinic
+sudo docker logs 384b1b096dee - логи контейнера
+sudo docker exec -it broker /bin/sh
+\dt+ - список таблиц с описанием 
+list - список бд
+
+Cоздали topic:
+sudo docker exec broker kafka-topics --bootstrap-server 0.0.0.0:9092 --create --topic 	purchases
+Список topics:
+sudo docker exec broker kafka-topics --list --bootstrap-server broker:9092
